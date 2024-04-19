@@ -4,7 +4,7 @@
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   ./bin/rails db:prepare
 fi
-
+which yarn && sleep 10
 yarn install --frozen-lockfile
 
 exec "${@}"
