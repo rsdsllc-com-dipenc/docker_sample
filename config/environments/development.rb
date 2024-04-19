@@ -1,6 +1,14 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  # Custom configuration for development environment
+  host = "localhost:3000"
+  config.action_mailer.default_url_options = { host:, protocol: 'http' }
+
+  # letter_opener gem configuration: https://github.com/ryanb/letter_opener
+  # Now any email will pop up in your browser instead of being sent.
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
